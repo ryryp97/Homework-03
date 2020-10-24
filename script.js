@@ -2,6 +2,15 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
+
+
+var passwordCharacters = [
+
+];
+
+var lowercaseString = "abcdefghijklmnopqrstuvwxyz"
+var lowercaseChar = lowercaseString.split("");
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -12,12 +21,9 @@ function writePassword() {
        var numbers = confirm("Would you like to include numbers?");
        var specialChar = confirm("Would you like to include special characters?");
 
-       var passwordCharacters = [
-
-       ]
         
        if (lowercase) {
-            passwordCharacters.push("abcdefghijklmnopqrstuvwxyz").split();
+            passwordCharacters.push(lowercaseChar);
        }
 
     //    if uppercase) {
@@ -41,7 +47,7 @@ function writePassword() {
        console.log(uppercase);
        console.log(numbers);
        console.log(specialChar);
-       console.log(passwordLength + 5);
+       console.log(passwordCharacters);
     };
   passwordText.value = password;
     
