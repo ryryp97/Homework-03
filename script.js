@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 
-//Setting the values into variables from which the algorhythm can generate the password from
+//Setting the values into variables from which the algorithm can generate the password from
 var lowercaseString = "abcdefghijklmnopqrstuvwxyz";
 
 var uppercaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
