@@ -8,8 +8,11 @@ var passwordCharacters = [
 
 ];
 
-var lowercaseString = "abcdefghijklmnopqrstuvwxyz"
+var lowercaseString = "abcdefghijklmnopqrstuvwxyz";
 var lowercaseChar = lowercaseString.split("");
+
+var uppercaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var uppercaseChar =  uppercaseString.split("");
 
 function writePassword() {
   var password = generatePassword();
@@ -26,9 +29,9 @@ function writePassword() {
             passwordCharacters.push(lowercaseChar);
        }
 
-    //    if uppercase) {
-
-    //    }
+       if (uppercase) {
+           passwordCharacters.push(uppercaseChar); 
+       }
 
     //    if (numbers) {
 
