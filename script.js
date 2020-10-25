@@ -4,37 +4,27 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 
 
-// var lowercaseString = "abcdefghijklmnopqrstuvwxyz";
-// var lowercaseChar = lowercaseString.split("");
+var passwordCharacters = [];
 
-// var uppercaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-// var uppercaseChar =  uppercaseString.split("");
+var lowercaseString = "abcdefghijklmnopqrstuvwxyz";
+var lowercaseChar = lowercaseString.split("");
 
-// var numberString = "0123456789";
-// var numberChar = numberString.split("");
+var uppercaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var uppercaseChar =  uppercaseString.split("");
 
-// var specialString = "\ \!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~";
-// var specialChar = specialString.split("");
+var numberString = "0123456789";
+var numberChar = numberString.split("");
 
-var lowercaseCharCodes = arrayFromLowToHigh(65, 90);
-var uppercaseCharCodes = arrayFromLowToHigh(97, 122);
-var numberCharCodes = arrayFromLowToHigh(48, 57);
-var specialCharCodes = arrayFromLowToHigh(33, 47).concat(
-    arrayFromLowToHigh(58, 64)
-  ).concat(
-    arrayFromLowToHigh(91, 96)
-  ).concat(
-    arrayFromLowToHigh(123, 126)
-  );
+var specialString = "\ \!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~";
+var specialChar = specialString.split("");
 
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
     function generatePassword() {
-
        var passwordLength = parseInt(prompt("How many characters would you like your password to be? (8-128 characters)"));
 
-       if (passwordLength < 8 || passwordLength > 128) {
+       if (passwordLength < 8 || passwordLength > 128 || !passwordLength) {
             alert("Choose a number between 8 and 128!");
        }
 
@@ -44,30 +34,37 @@ function writePassword() {
        var special = confirm("Would you like to include special characters?");
 
        if (lowercase != true && uppercase != true && numbers != true && special != true) {
-            alert("Please select at least one character type.");
-       }
-
+        alert("Please select at least one character type.");
+        }
+        
        if (lowercase) {
-            
+            passwordCharacters.push(lowercaseChar);
        }
 
        if (uppercase) {
-             
+            passwordCharacters.push(uppercaseChar); 
        }
 
        if (numbers) {
-              
+            passwordCharacters.push(numberChar);  
        }
 
        if (special) {
-            
+            passwordCharacters.push(specialChar);
        }
 
-       if (passwordLength >= 8 && passwordLength <= 128) {
-        for (i = 0; i <= passwordLength.length; i++) {
+    //    var passwordArray = [];
 
+        if (passwordLength >= 8 && passwordLength <= 128) {
+            for (i = 0; i <= passwordLength.length; i++) {
+
+                // var characterArray = Math.floor((Math.random() * passwordLength.length));
+                // passwordArray.push(passwordCharacters[Math.floor((Math.random() * passwordCharacters.length))][characterArray]);
+
+                var randomCharacter = Math.floor(Math.random() * passwordCharacters.length);
+            }
         }
-            
+       console.log(randomCharacter);
 
        console.log(passwordLength);
        console.log(lowercase);
