@@ -14,6 +14,12 @@ var lowercaseChar = lowercaseString.split("");
 var uppercaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var uppercaseChar =  uppercaseString.split("");
 
+var numberString = "0123456789";
+var numberChar = numberString.split("");
+
+var specialString = "\ \!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~";
+var specialChar = specialString.split("");
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
@@ -22,7 +28,7 @@ function writePassword() {
        var lowercase = confirm("Would you like to include lowercase letters?");
        var uppercase = confirm("Would you like to include uppercase letters?");
        var numbers = confirm("Would you like to include numbers?");
-       var specialChar = confirm("Would you like to include special characters?");
+       var special = confirm("Would you like to include special characters?");
 
         
        if (lowercase) {
@@ -30,16 +36,16 @@ function writePassword() {
        }
 
        if (uppercase) {
-           passwordCharacters.push(uppercaseChar); 
+            passwordCharacters.push(uppercaseChar); 
        }
 
-    //    if (numbers) {
+       if (numbers) {
+            passwordCharacters.push(numberChar);  
+       }
 
-    //    }
-
-    //    if (specialChar) {
-
-    //    }
+       if (special) {
+            passwordCharacters.push(specialChar);
+       }
 
     //    if (passwordLength >= 8 || passwordLength <= 128) {
 
@@ -49,7 +55,6 @@ function writePassword() {
        console.log(lowercase);
        console.log(uppercase);
        console.log(numbers);
-       console.log(specialChar);
        console.log(passwordCharacters);
     };
   passwordText.value = password;
