@@ -31,38 +31,49 @@ function writePassword() {
         alert("Please select at least one character type.");
         }
         
-       if (lowercase) {
-            
-       }
+        // if (lowercase) {
+        //     passwordTest += lowercaseString.charAt(Math.floor(Math.random() * lowercaseString.length));
+        // }
 
-       if (uppercase) {
-             
-       }
+        // if (uppercase) {
+        //     passwordTest += uppercaseString.charAt(Math.floor(Math.random() * uppercaseString.length));
+        // }
 
-       if (numbers) {
-              
-       }
+        // if (numbers) {
+        //     passwordTest += numberString.charAt(Math.floor(Math.random() * numberString.length));
+        // }
 
-       if (special) {
-            
-       }
+        // if (special) {
+        //     passwordTest += specialString.charAt(Math.floor(Math.random() * specialString.length));
+        // }
 
-       var passwordTest = " ";
+       var password = " ";
 
         if (passwordLength >= 8 && passwordLength <= 128) {
             for (i = 0; i <= passwordLength; i++) {
 
-                // var characterArray = Math.floor((Math.random() * passwordLength.length));
-                // passwordArray.push(passwordCharacters[Math.floor((Math.random() * passwordCharacters.length))][characterArray]);
-                
-                
-                passwordTest += lowercaseString.charAt(Math.floor(Math.random() * lowercaseString.length));
-                passwordTest += uppercaseString.charAt(Math.floor(Math.random() * uppercaseString.length));
-                passwordTest += numberString.charAt(Math.floor(Math.random() * numberString.length));
-                passwordTest += specialString.charAt(Math.floor(Math.random() * specialString.length));
+                // passwordTest += lowercaseString.charAt(Math.floor(Math.random() * lowercaseString.length));
+                // passwordTest += uppercaseString.charAt(Math.floor(Math.random() * uppercaseString.length));
+                // passwordTest += numberString.charAt(Math.floor(Math.random() * numberString.length));
+                // passwordTest += specialString.charAt(Math.floor(Math.random() * specialString.length));
+                if (lowercase) {
+                    password += lowercaseString.charAt(Math.floor(Math.random() * lowercaseString.length));
+                }
+        
+                if (uppercase) {
+                    password += uppercaseString.charAt(Math.floor(Math.random() * uppercaseString.length));
+                }
+        
+                if (numbers) {
+                    password += numberString.charAt(Math.floor(Math.random() * numberString.length));
+                }
+        
+                if (special) {
+                    password += specialString.charAt(Math.floor(Math.random() * specialString.length));
+                }
             }
         }
-       console.log(passwordTest);
+       alert("Your generated password is: " + password);
 
     };
   passwordText.value = password;
