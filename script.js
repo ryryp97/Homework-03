@@ -4,19 +4,13 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 
 
-var passwordCharacters = [];
-
 var lowercaseString = "abcdefghijklmnopqrstuvwxyz";
-var lowercaseChar = lowercaseString.split("");
 
 var uppercaseString = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var uppercaseChar =  uppercaseString.split("");
 
 var numberString = "0123456789";
-var numberChar = numberString.split("");
 
 var specialString = "\ \!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~";
-var specialChar = specialString.split("");
 
 function writePassword() {
   var password = generatePassword();
@@ -38,39 +32,38 @@ function writePassword() {
         }
         
        if (lowercase) {
-            passwordCharacters.push(lowercaseChar);
+            
        }
 
        if (uppercase) {
-            passwordCharacters.push(uppercaseChar); 
+             
        }
 
        if (numbers) {
-            passwordCharacters.push(numberChar);  
+              
        }
 
        if (special) {
-            passwordCharacters.push(specialChar);
+            
        }
 
-    //    var passwordArray = [];
+       var passwordTest = " ";
 
         if (passwordLength >= 8 && passwordLength <= 128) {
-            for (i = 0; i <= passwordLength.length; i++) {
+            for (i = 0; i <= passwordLength; i++) {
 
                 // var characterArray = Math.floor((Math.random() * passwordLength.length));
                 // passwordArray.push(passwordCharacters[Math.floor((Math.random() * passwordCharacters.length))][characterArray]);
-
-                var randomCharacter = Math.floor(Math.random() * passwordCharacters.length);
+                
+                
+                passwordTest += lowercaseString.charAt(Math.floor(Math.random() * lowercaseString.length));
+                passwordTest += uppercaseString.charAt(Math.floor(Math.random() * uppercaseString.length));
+                passwordTest += numberString.charAt(Math.floor(Math.random() * numberString.length));
+                passwordTest += specialString.charAt(Math.floor(Math.random() * specialString.length));
             }
         }
-       console.log(randomCharacter);
+       console.log(passwordTest);
 
-       console.log(passwordLength);
-       console.log(lowercase);
-       console.log(uppercase);
-       console.log(numbers);
-       console.log(passwordCharacters);
     };
   passwordText.value = password;
     
