@@ -13,7 +13,7 @@ var numberString = "0123456789";
 var specialString = "\ \!\"\#\$\%\&\'\(\)\*\+\,\-\.\/\:\;\<\=\>\?\@\[\\\]\^\_\`\{\|\}\~";
 
 function writePassword() {
-    var password = generatePassword();
+    
     var passwordText = document.querySelector("#password");
     function generatePassword() {
 
@@ -35,39 +35,44 @@ function writePassword() {
                 alert("Please select at least one character type.");
             }
 
-            //The generated password is added to this string
+            
+            //The respective chacter string will be pushed to a characters array depending on the user's response
+            var characterArray = [];
 
-            var password = " ";
+            if (lowercase) {
+                characterArray.push(lowercaseString)
+            };
+            if (uppercase) {
+                characterArray.push(uppercaseString)
+            };
+            if (numbers) {
+                characterArray.push(numberString)
+            };
+            if (special) {
+                characterArray.push(specialString)
+            }
+            
+            //Concatenates the strings that make up the characterArray into 1 stirng and stores it in characterString
+            var characterString = "";
+
+            for (var i = 0; i < characterArray.length; i++) {
+                characterString += characterArray[i]
+            }
+        
+            //The generated password is added to this string
+            var password = "";
 
             //This for loop will run until the generated password reaches the user's desired length
-
             if (passwordLength >= 8 && passwordLength <= 128) {
-                for (i = 0; i <= passwordLength; i++) {
-
-                    //These statements add the characters specified by the user to the generated password
-
-                    if (lowercase) {
-                        password += lowercaseString.charAt(Math.floor(Math.random() * lowercaseString.length));
-                    };
-
-                    if (uppercase) {
-                        password += uppercaseString.charAt(Math.floor(Math.random() * uppercaseString.length));
-                    };
-
-                    if (numbers) {
-                        password += numberString.charAt(Math.floor(Math.random() * numberString.length));
-                    };
-
-                    if (special) {
-                        password += specialString.charAt(Math.floor(Math.random() * specialString.length));
-                    }
+                for (var i = 1; i <= passwordLength; i++) {
+                    password += characterString.charAt(Math.floor(Math.random() * characterString.length));
                 };
             };
             alert("Your generated password is: " + password);
-
+            passwordText.value = password;
         };
     };
-    passwordText.value = password;
+    generatePassword();
 
 };
 
