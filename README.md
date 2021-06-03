@@ -2,7 +2,7 @@
 
 This repository contains a program that runs on a webpage that can generate passwords.  The primary purpose for its creation was to practice working with JavaScript algorithms.
 
-The site can be reached here: [Password Generator](https://ryryp97.github.io/Homework-03/)
+The site can be reached here: [Password Generator](https://ryryp97.github.io/Password-Generator/)
 
 What the site looks like: 
 ![Password Generator](images/Password_Generator.png)
