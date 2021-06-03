@@ -1,4 +1,4 @@
-# Homework-03
+# Password-Generator
 
 This repository contains a program that runs on a webpage that can generate passwords.  The primary purpose for its creation was to practice working with JavaScript algorithms.
 
